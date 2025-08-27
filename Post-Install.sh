@@ -118,7 +118,7 @@ if [ $? -eq 0 ]; then
     sudo dnf -y install intel-media-driver
     echo "#GPU Hardware Acceleration
 LIBVA_DRIVER_NAME=i965
-VDPAU_DRIVER=va_gl" > /etc/environment
+VDPAU_DRIVER=va_gl" | sudo tee /etc/environment
 fi
 ## AMD Drivers
 lspci | grep VGA | grep AMD
@@ -130,7 +130,7 @@ if [ $? -eq 0 ]; then
     sudo dnf -y swap mesa-vdpau-drivers.i686 mesa-vdpau-drivers-freeworld.i686
     echo "#GPU Hardware Acceleration
 LIBVA_DRIVER_NAME=radeonsi
-VDPAU_DRIVER=radeonsi" > /etc/environment
+VDPAU_DRIVER=radeonsi" | sudo tee /etc/environment
 fi
 ## Nvidia Drivers
 lspci | grep VGA | grep Nvidia
@@ -141,7 +141,7 @@ if [ $? -eq 0 ]; then
     sudo dnf -y upgrade --refresh
     echo "#GPU Hardware Acceleration
 LIBVA_DRIVER_NAME=nvidia
-VDPAU_DRIVER=nvidia" > /etc/environment
+VDPAU_DRIVER=nvidia" | sudo tee /etc/environment
 fi
 sudo dnf -y install vulkan libva-utils vdpauinfo
 
