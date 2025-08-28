@@ -80,7 +80,6 @@ flatpak -y install flathub io.github.vmkspv.netsleuth
 flatpak -y install flathub io.github.giantpinkrobots.flatsweep
 flatpak -y install flathub com.spotify.Client
 flatpak -y install flathub com.valvesoftware.Steam
-flatpak -y install flathub net.lutris.Lutris
 flatpak -y install flathub com.heroicgameslauncher.hgl
 flatpak -y install flathub org.duckstation.DuckStation
 flatpak -y install flathub net.pcsx2.PCSX2
