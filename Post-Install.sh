@@ -33,6 +33,11 @@ if [ "$XDG_CURRENT_DESKTOP" = "GNOME" ]; then
     sudo dnf -y remove gnome-boxes gnome-calendar gnome-calculator gnome-characters gnome-clocks gnome-connections gnome-contacts gnome-epub-thumbnailer gnome-font-viewer gnome-logs gnome-maps gnome-text-editor gnome-tour gnome-weather loupe simple-scan snapshot totem libreoffice-* firefox rhythmbox
     sudo dnf -y install firewall-config
 fi
+# If Fedora KDE was installed (through the everything ISO and no bloat)
+## -> Remove preinstalled Applications (to be replaced with Flatpaks)
+if [ "$XDG_CURRENT_DESKTOP" = "GNOME" ]; then
+    sudo dnf -y remove kwrite
+fi 
 
 # Create a new default Firewall Zone
 sudo firewall-cmd --permanent --new-zone=custom
@@ -111,6 +116,9 @@ sudo dnf -y install rpmfusion-free-release-tainted
 sudo dnf -y install libdvdcss
 sudo dnf -y install rpmfusion-nonfree-release-tainted
 sudo dnf -y --repo=rpmfusion-nonfree-tainted install "*-firmware"
+
+# Drivers
+sudo apt install -y pciutils
 ## Intel Drives
 lspci | grep VGA | grep Intel
 if [ $? -eq 0 ]; then
