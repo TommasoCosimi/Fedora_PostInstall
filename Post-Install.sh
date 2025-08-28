@@ -35,7 +35,7 @@ if [ "$XDG_CURRENT_DESKTOP" = "GNOME" ]; then
 fi
 # If Fedora KDE was installed (through the everything ISO and no bloat)
 ## -> Remove preinstalled Applications (to be replaced with Flatpaks)
-if [ "$XDG_CURRENT_DESKTOP" = "GNOME" ]; then
+if [ "$XDG_CURRENT_DESKTOP" = "KDE" ]; then
     sudo dnf -y remove kwrite
 fi 
 
