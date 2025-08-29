@@ -118,7 +118,7 @@ sudo dnf -y install rpmfusion-nonfree-release-tainted
 sudo dnf -y --repo=rpmfusion-nonfree-tainted install "*-firmware"
 
 # Drivers
-sudo apt install -y pciutils
+sudo apt install -y lspci
 ## Intel Drives
 lspci | grep VGA | grep Intel
 if [ $? -eq 0 ]; then
