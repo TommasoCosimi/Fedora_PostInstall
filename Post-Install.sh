@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Ask if SSH access to the machine is desired
-ssh_enabled = 0
+ssh_enabled=0
 while :
 do
     read -p "Do you want to access your machine via SSH? [Y/N] " ssh_prompt
