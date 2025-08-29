@@ -136,12 +136,13 @@ if [ $? -eq 0 ]; then
     sudo dnf -y swap mesa-vdpau-drivers mesa-vdpau-drivers-freeworld
     sudo dnf -y swap mesa-va-drivers.i686 mesa-va-drivers-freeworld.i686
     sudo dnf -y swap mesa-vdpau-drivers.i686 mesa-vdpau-drivers-freeworld.i686
+    sudo dnf -y install radeontop 
     echo "#GPU Hardware Acceleration
 LIBVA_DRIVER_NAME=radeonsi
 VDPAU_DRIVER=radeonsi" | sudo tee /etc/environment
 fi
 ## Nvidia Drivers
-lspci | grep VGA | grep Nvidia
+lspci | grep VGA | grep NVIDIA
 if [ $? -eq 0 ]; then
     echo "You have an Nvidia GPU. You will have to run the Post-Install_Nvidia.sh file after the reboot to finish installing some components."
     sudo dnf -y install akmod-nvidia xorg-x11-drv-nvidia xorg-x11-drv-nvidia-cuda xorg-x11-drv-nvidia-cuda-libs.{i686,x86_64} xorg-x11-drv-nvidia-power nvidia-vaapi-driver
