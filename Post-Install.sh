@@ -37,6 +37,7 @@ fi
 ## -> Remove preinstalled Applications (to be replaced with Flatpaks)
 if [ "$XDG_CURRENT_DESKTOP" = "KDE" ]; then
     sudo dnf -y remove kwrite
+    sudo dnf -y install dragon
 fi 
 
 # Create a new default Firewall Zone
@@ -158,7 +159,7 @@ sudo dnf -y install vulkan libva-utils vdpauinfo
 ## C/C++
 sudo dnf -y group install development-tools
 ## Java
-sudo dnf -y install java-latest-openjdk
+sudo dnf -y install java-latest-openjdk java-latest-openjdk-devel
 ## Python
 sudo dnf -y install python3-pip
 ## Rust
