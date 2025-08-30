@@ -188,10 +188,6 @@ sudo dnf -y install gns3-server gns3-gui
 
 # Native Miscellaneous Applications
 sudo dnf -y install lm_sensors vim micro htop btop stress s-tui wget wireshark bind-utils mediawriter speedtest-cli fastfetch p7zip p7zip-plugins p7zip-gui gh nextcloud-client syncthing qpdf steam-devices
-# If using the Plasma Desktop also install the Dolphin File Manager addon for the Nextcloud Client
-if [ "$XDG_CURRENT_DESKTOP" = "KDE" ]; then
-    sudo dnf -y install nextcloud-client-dolphin
-fi
 sudo usermod -aG wireshark $(whoami)
 sudo systemctl enable --now sshd
 sudo systemctl enable --now syncthing@$(whoami).service
