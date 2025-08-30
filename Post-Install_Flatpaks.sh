@@ -46,7 +46,6 @@ if [ "$XDG_CURRENT_DESKTOP" = "KDE" ]; then
     flatpak -y install flathub io.github.wereturtle.ghostwriter
     flatpak -y install flathub org.kde.gwenview
     flatpak -y install flathub org.kde.kclock
-    flatpak -y install flathub org.kde.marknote
     flatpak -y install flathub org.kde.kalk
     flatpak -y install flathub org.kde.elisa
     flatpak -y install flathub org.qownnotes.QOwnNotes
