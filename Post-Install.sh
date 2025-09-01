@@ -187,7 +187,7 @@ sudo usermod -aG docker $(whoami)
 sudo dnf -y install gns3-server gns3-gui
 
 # Native Miscellaneous Applications
-sudo dnf -y install lm_sensors vim micro htop btop stress s-tui wget wireshark bind-utils mediawriter speedtest-cli fastfetch p7zip p7zip-plugins p7zip-gui gh nextcloud-client syncthing qpdf steam-devices
+sudo dnf -y install lm_sensors vim micro htop btop stress s-tui wget wireshark bind-utils mediawriter distrobox speedtest-cli fastfetch p7zip p7zip-plugins p7zip-gui gh nextcloud-client syncthing qpdf steam-devices
 sudo usermod -aG wireshark $(whoami)
 sudo systemctl enable --now sshd
 sudo systemctl enable --now syncthing@$(whoami).service
